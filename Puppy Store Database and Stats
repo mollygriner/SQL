@@ -1,0 +1,34 @@
+--Create a puppy store database.
+
+CREATE TABLE puppies (id INTEGER PRIMARY KEY, breed TEXT, gender TEXT, age INTEGER, price INTEGER);
+
+INSERT INTO puppies VALUES (1, "dachshund", "female", 4, 2000);
+INSERT INTO puppies VALUES (2, "cavalier king charles", "female", 3, 2500);
+INSERT INTO puppies VALUES (3, "akita", "male", 5, 1500);
+INSERT INTO puppies VALUES (4, "chow chow", "female", 2, 2000);
+INSERT INTO puppies VALUES (5, "english bulldog", "female", 1, 2900);
+INSERT INTO puppies VALUES (6, "german shepherd", "female", 5, 1200);
+INSERT INTO puppies VALUES (7, "golden retriever", "male", 4, 1500);
+INSERT INTO puppies VALUES (8, "rottweiler", "male", 1, 1700);
+INSERT INTO puppies VALUES (9, "poodle", "female", 3, 2800);
+INSERT INTO puppies VALUES (10, "labrador retriever", "male", 5, 3000);
+INSERT INTO puppies VALUES (11, "beagle", "male", 2, 1000);
+INSERT INTO puppies VALUES (12, "dalmatian", "female", 3, 1200);
+INSERT INTO puppies VALUES (13, "maltese", "female", 4, 2300);
+INSERT INTO puppies VALUES (14, "pug", "male", 2, 1800);
+INSERT INTO puppies VALUES (15, "shiba inu", "female", 3, 1600);
+
+--display the database ordered by price.
+SELECT * FROM puppies
+ORDER BY price asc;
+
+--what is the average price of male puppies?
+SELECT AVG(price) "average male puppy price"
+FROM puppies
+WHERE gender="male"; 
+
+--what are the five least expensive puppy breeds?
+SELECT breed, price
+FROM puppies
+ORDER BY price asc
+LIMIT 5; 
